@@ -1,0 +1,23 @@
+extends inc/layout
+
+block customize-style
+  link(rel='stylesheet', href='/stylesheets/authorize.css')
+
+block content
+  div.container
+    form.form-authorize
+      h2.form-authorize-heading Welcome
+
+      label.sr-only(for='accountInput') Account
+      input#accountInput.form-control.form-top(type='email', placeholder='your@email.com', required, autofocus)
+
+      label.sr-only(for='passwordInput') Password
+      input#passwordInput.form-control.form-mid(type='password', placeholder='password', required)
+
+      label.sr-only(for='repasswordInput') Password
+      input#repasswordInput.form-control.form-mid(type='password', placeholder='password validation', required)
+
+      label.sr-only(for='accountInput') Phone Number
+      input#phoneInput.form-control.form-bottom(type='text', placeholder='phone number', required)
+      
+      button.btn.btn-lg.btn-primary.btn-block(type='submit') Sign Up

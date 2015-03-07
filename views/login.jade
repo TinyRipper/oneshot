@@ -1,0 +1,29 @@
+extends inc/layout
+
+block customize-style
+  link(rel='stylesheet', href='/stylesheets/authorize.css')
+
+block content
+  div.jumbotron
+    div.container
+      div.col-md-8
+        h1 Welcome
+        p Before everything start. please sign in or sign up.
+        div.container-right
+
+      div.col-md-4
+        form.form-authorize(method='POST')
+          h2.form-authorize-heading Sign In
+
+          label.sr-only(for='accountInput') Account
+          input#accountInput.form-control.form-top(type='email', placeholder='your@email.com', required, autofocus)
+
+          label.sr-only(for='passwordInput') Password
+          input#passwordInput.form-control.form-bottom(type='password', placeholder='password', required)
+
+          div.checkbox
+            label
+              input#cache(type='checkbox', value='cache')
+              |Remember me in 1 month
+
+          button.btn.btn-lg.btn-primary.btn-block(type='submit') Sign In
